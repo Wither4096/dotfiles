@@ -1,0 +1,11 @@
+#ALL
+SUBSYSTEM=="usb",DEVPATH=="*",RUN+="/home/wither/.local/bin/usb-libvirt-hotplug.sh stealth10"
+
+# # AUDIO
+#SUBSYSTEM=="usb",DEVPATH=="/devices/pci0000:00/0000:00:14.0/usb1/1-7",RUN+="/home/wither/.local/bin/usb-libvirt-hotplug.sh stealth10"
+
+# # MOUSE
+#SUBSYSTEM=="usb",DEVPATH=="/devices/pci0000:00/0000:00:14.0/usb1/1-5",RUN+="/home/wither/.local/bin/usb-libvirt-hotplug.sh stealth10"
+
+# # KEYBOARD
+#SUBSYSTEM=="usb",DEVPATH=="/devices/pci0000:00/0000:00:14.0/usb1/1-6",RUN+="/home/wither/.local/bin/usb-libvirt-hotplug.sh stealth10"

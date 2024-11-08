@@ -1,0 +1,108 @@
+// -*- mode: jsonc -*-
+{
+    "height": 30,
+    "spacing": 4,
+    "modules-left": [
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "custom/power",
+        "pulseaudio",
+        "backlight",
+        "memory",
+        "cpu",
+        "network",
+        "battery",
+        "temperature",
+        "clock",
+        "tray"
+    ],
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "sway/window":{
+	    "format": "{title:.30}"
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "custom/power": {
+        "format" : "⏻ ",
+		"tooltip": false,
+		"on-click": "$HOME/.config/rofi/powermenu/powermenu.sh"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "tooltip": false
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+   "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "network": {
+        "format-wifi": "{essid} 󰤨 ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": " {signalStrength}% ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected 󰤮",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+        "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+        "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""],
+        "tooltip": false
+    },
+    "clock": {
+	"format":"󰥔 {:%H:%M}",
+        "format-alt": " {:%A %d/%m/%EY}",
+        "tooltip": false
+    },
+ 
+        "tray": {
+        "spacing": 10
+    }
+
+}

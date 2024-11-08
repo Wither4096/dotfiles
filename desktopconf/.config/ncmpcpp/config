@@ -1,0 +1,41 @@
+progressbar_look = "─╼"
+colors_enabled = "yes"
+header_window_color = "magenta"
+volume_color = "green"
+state_line_color = "yellow"
+state_flags_color = "blue"
+main_window_color = "cyan"
+color1 = "cyan"
+color2 = "blue"
+current_item_prefix = "$(magenta_236)"
+current_item_suffix = "$(end)"
+progressbar_color = "blue"
+statusbar_color = "cyan"
+current_item_inactive_column_prefix = "$(magenta)"
+current_item_inactive_column_suffix = "$(end)"
+
+volume_change_step = 1
+mouse_support = "no"
+seek_time = 5
+incremental_seeking = "no"
+display_bitrate = "yes"
+
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "visualiser"
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "+|"
+
+mpd_music_dir = "/drives/storage/Media/Music"
+lyrics_directory = "/drives/storage/Media/Music/Lyrics"
+external_editor = "vim"
+ignore_diacritics = "yes"
+
+execute_on_song_change = ~/.local/bin/songinfo.sh
+user_interface = alternative
+media_library_primary_tag = album_artist
+
+startup_screen = visualizer  
+startup_slave_screen = playlist 
+startup_slave_screen_focus = "yes"
+locked_screen_width_part = 25
