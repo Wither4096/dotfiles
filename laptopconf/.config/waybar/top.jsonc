@@ -10,7 +10,7 @@
     "modules-right": [
         "custom/power",
         "pulseaudio",
-        "backlight",
+//        "backlight",
         "memory",
         "cpu",
         "network",

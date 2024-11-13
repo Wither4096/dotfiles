@@ -5,7 +5,9 @@
     "spacing": 4,
     "modules-center": [
         "sway/workspaces",
-	"sway/mode",
+	"sway/mode"
+    ],
+    "modules-right":[
 	"sway/scratchpad"
     ],
     "sway/workspaces": {
