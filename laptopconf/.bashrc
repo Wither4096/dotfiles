@@ -7,7 +7,6 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
-export DESKTOP_SESSION=sway
 export VISUAL=vim
 export EDITOR="$VISUAL"
 fish

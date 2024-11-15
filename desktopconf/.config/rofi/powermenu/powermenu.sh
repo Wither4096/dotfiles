@@ -79,6 +79,7 @@ run_cmd() {
 				i3-msg exit
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
+			else swaymsg exit;
 			fi
 		fi
 	else
@@ -100,6 +101,7 @@ case ${chosen} in
 			betterlockscreen -l
 		elif [[ -x '/usr/bin/i3lock' ]]; then
 			i3lock
+		else swaylock;
 		fi
         ;;
     $suspend)
