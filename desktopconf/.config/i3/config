@@ -226,5 +226,9 @@ bindcode 200 exec "dunstctl set-paused toggle"
 bindcode 202 exec "pamixer --source rnnoise_source -t"
 
 # Other
+bindcode 171 exec "playerctl next --player=$(cat ~/.cache/player)"
+bindcode 172 exec "playerctl play-pause --player=$(cat ~/.cache/player)"
+bindcode 173 exec "playerctl previous --player=$(cat ~/.cache/player)"
+bindcode 174 exec "playerctl stop --player=$(cat ~/.cache/player)"
 bindsym --release $mod+Shift+s exec import png:-|tee $HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S").png|xclip -selection clipboard -t image/png
 bindsym $mod+P exec ~/.config/rofi/powermenu/powermenu.sh
