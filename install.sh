@@ -8,7 +8,7 @@ sudo mv desktopconf/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.con
 sudo cp /etc/default/grub /etc/default/grub.old
 sudo mv files/dracula /boot/grub/themes
 
-cp -r .config $HOME
+cp -r desktopconf/.config $HOME
 mv files/bin $HOME/.local/
 mkdir -p $HOME/Pictures/Screenshots/
 sudo mv files/themes/* /usr/share/themes
