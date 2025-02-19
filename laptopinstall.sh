@@ -3,7 +3,7 @@
 sudo pacman -S os-prober fish sway swaybg swayidle swaylock greetd greetd-tuigreet grim slurp rofi-wayland waybar kitty polkit polkit-gnome feh zip unzip amd-ucode pipewire-pulse pamixer mesa fastfetch thunar tumbler ffmpegthumbnailer xdg-user-dirs ntfs-3g ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop discord mpv exfat-utils udiskie keepassxc imagemagick dunst playerctl firefox spotify-launcher 
 
 sudo cp /etc/default/grub /etc/default/grub.old
-sudo mv files/dracula /boot/grub/themes
+sudo mv files/theme /boot/grub/themes
 
 cp -r laptopconf/.config $HOME
 mv files/bin $HOME/.local/
@@ -27,5 +27,5 @@ git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si
 
-printf "GRUB_GFXMODE=1920x1080\nGRUB_DISABLE_OS_PROBER=false\nGRUB_THEME="/boot/grub/themes/dracula/theme.txt""|sudo tee -a /etc/default/grub
+printf "GRUB_GFXMODE=1920x1080\nGRUB_DISABLE_OS_PROBER=false\nGRUB_THEME="/boot/grub/themes/theme/theme.txt""|sudo tee -a /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
