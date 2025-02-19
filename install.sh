@@ -6,7 +6,7 @@ sudo mv desktopconf/X11/xorg.conf.i /etc/X11/
 sudo mv desktopconf/X11/xorg.conf.n /etc/X11/
 sudo mv desktopconf/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
 sudo cp /etc/default/grub /etc/default/grub.old
-sudo mv files/dracula /boot/grub/themes
+sudo mv files/theme /boot/grub/themes
 
 cp -r desktopconf/.config $HOME
 mv files/bin $HOME/.local/
@@ -32,5 +32,5 @@ cd yay-bin
 makepkg -si
 yay -S feishin-bin #mpd-mpris-bin betterlockscreen ani-cli vscodium-bin python-yams yt-dlp
 
-printf "GRUB_GFXMODE=1360x768\nGRUB_DISABLE_OS_PROBER=false\nGRUB_THEME="/boot/grub/themes/dracula/theme.txt""|sudo tee -a /etc/default/grub
+printf "GRUB_GFXMODE=1360x768\nGRUB_DISABLE_OS_PROBER=false\nGRUB_THEME="/boot/grub/themes/theme/theme.txt""|sudo tee -a /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
