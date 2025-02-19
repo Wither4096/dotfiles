@@ -10,7 +10,7 @@
     "modules-right": [
         "custom/power",
         "pulseaudio",
-//        "backlight",
+        "backlight",
         "memory",
         "cpu",
         "network",
@@ -42,15 +42,16 @@
         "tooltip-format": "{app}: {title}"
     },
     "custom/power": {
-        "format" : "⏻ ",
+        "format" : " ⏻ ",
 		"tooltip": false,
 		"on-click": "$HOME/.config/rofi/powermenu/powermenu.sh"
     },
     "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume}%  {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        //"format-source": "{volume}% ",
+        "format-source": "  ",
+        "format-source-muted": "  ",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "tooltip": false
     },
@@ -60,10 +61,10 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}%  "
     },
    "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}%  ",
         "tooltip": false
     },
     "network": {
@@ -71,7 +72,7 @@
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": " {signalStrength}% ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected 󰤮",
+        "format-disconnected": "Disconnected 󰤮 ",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
         "battery": {
@@ -81,8 +82,8 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-charging": "{capacity}%  ",
+        "format-plugged": "{capacity}%  ",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
@@ -92,12 +93,12 @@
         "temperature": {
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""],
+        "format-icons": ["  ", "  ", "  "],
         "tooltip": false
     },
     "clock": {
-	"format":"󰥔 {:%H:%M}",
-        "format-alt": " {:%A %d/%m/%EY}",
+	"format":" 󰥔 {:%H:%M}",
+        "format-alt": "  {:%A %d/%m/%EY}",
         "tooltip": false
     },
  
