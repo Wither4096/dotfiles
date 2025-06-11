@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S os-prober fish sway swaybg swayidle swaylock greetd greetd-tuigreet grim slurp rofi-wayland waybar kitty polkit polkit-gnome feh zip unzip amd-ucode pipewire-pulse pamixer mesa fastfetch thunar tumbler ffmpegthumbnailer xdg-user-dirs ntfs-3g ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop discord mpv exfat-utils udiskie keepassxc imagemagick dunst playerctl firefox spotify-launcher 
+sudo pacman -S os-prober fish sway swaybg swayidle swaylock grim slurp rofi-wayland waybar kitty polkit polkit-gnome feh zip unzip amd-ucode pipewire-pulse pamixer mesa fastfetch thunar tumbler ffmpegthumbnailer xdg-user-dirs ntfs-3g ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop mpv exfat-utils udiskie keepassxc imagemagick dunst playerctl libreoffice-still qt5-wayland xwayland brightnessctl firefox spotify-launcher #discord greetd greetd-tuigreet
 
 sudo cp /etc/default/grub /etc/default/grub.old
 sudo mv files/theme /boot/grub/themes
