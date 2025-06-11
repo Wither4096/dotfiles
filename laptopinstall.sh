@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S os-prober fish sway swaybg swayidle swaylock grim slurp rofi-wayland waybar kitty polkit polkit-gnome feh zip unzip amd-ucode pipewire-pulse pamixer mesa fastfetch thunar tumbler ffmpegthumbnailer xdg-user-dirs ntfs-3g ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop mpv exfat-utils udiskie keepassxc imagemagick dunst playerctl libreoffice-still qt5-wayland xwayland brightnessctl firefox spotify-launcher #discord greetd greetd-tuigreet
+sudo pacman -S os-prober fish sway swaybg swayidle swaylock grim slurp rofi-wayland waybar kitty polkit polkit-gnome feh zip unzip amd-ucode pipewire-pulse pamixer mesa fastfetch thunar tumbler ffmpegthumbnailer xdg-user-dirs ntfs-3g ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop mpv exfat-utils udiskie keepassxc imagemagick dunst playerctl libreoffice-still qt5-wayland xwayland brightnessctl sddm fprint qt6-svg qt6-declarative qt5-quickcontrols2 firefox spotify-launcher #discord greetd greetd-tuigreet
 
 sudo cp /etc/default/grub /etc/default/grub.old
 sudo mv files/theme /boot/grub/themes
@@ -21,6 +21,7 @@ sudo cp files/99-noto-reject-nastaliq.conf /etc/fonts/conf.d/
 # mkdir -p ~/.local/share/noise-suppression
 # unzip linux-rnnoise.zip -d ~/.local/share/noise-suppression
 
+sudo systemctl enable sddm.service
 systemctl --user enable --now pipewire.service
 
 git clone https://aur.archlinux.org/yay-bin.git
