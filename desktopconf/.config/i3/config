@@ -215,6 +215,7 @@ bindcode 179 exec "if cat ~/.cache/player | grep -q 'Feishin'; then feishin; eli
 bindcode 181 exec "playerctl play-pause --player=$(cat ~/.cache/player)"
 
 # Macropad
+bindcode 191 exec "if pactl info|grep 'alsa_output.usb-Generic_USB_Audio-00.analog-stereo';then pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo;else pactl set-default-sink alsa_output.usb-Generic_USB_Audio-00.analog-stereo;fi"
 bindcode 194 exec "if cat ~/.cache/player |grep -q 'Feishin'; then echo spotify|tee ~/.cache/player;  elif cat ~/.cache/player |grep -q 'spotify'; then echo Feishin| tee ~/.cache/player;fi"
 # if cat ~/.cache/player |grep -q 'Feishin'; then echo spotify|tee ~/.cache/player;  elif cat ~/.cache/player |grep -q 'spotify'; then echo mpd|tee ~/.cache/player; elif cat ~/.cache/player |grep -q 'mpd'; then echo Feishin|tee ~/.cache/player;fi
 bindcode 195 exec "playerctl shuffle toggle --player=$(cat ~/.cache/player)"
@@ -223,7 +224,8 @@ bindcode 197 exec "playerctl stop --player=$(cat ~/.cache/player)"
 bindcode 198 exec "playerctl next --player=$(cat ~/.cache/player)"
 bindcode 199 --release exec import -window root png:-|tee $HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S")-full.png|xclip -selection clipboard -t image/png
 bindcode 200 exec "dunstctl set-paused toggle"
-bindcode 202 exec "pamixer --source rnnoise_source -t"
+#bindcode 202 exec "pamixer --source rnnoise_source -t&paplay ~/.local/bin/bell.oga"
+bindcode 202 exec "pamixer --source alsa_input.usb-HP__Inc_HyperX_SoloCast-00.analog-stereo -t&paplay ~/.local/bin/bell.oga"
 
 # Other
 bindcode 171 exec "playerctl next --player=$(cat ~/.cache/player)"
