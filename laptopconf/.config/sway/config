@@ -210,6 +210,7 @@ timeout 180 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
 # Clipcat
 exec clipcatd
 bindsym $mod+Shift+v exec clipcat-menu
+bindsym $mod+Shift+n exec clipcatctl clear
 
 
 
