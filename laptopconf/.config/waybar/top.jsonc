@@ -1,6 +1,6 @@
 // -*- mode: jsonc -*-
 {
-    "height": 30,
+    "height": 45,
     "spacing": 4,
     "modules-left": [
     ],
@@ -17,6 +17,7 @@
         "battery",
         "temperature",
         "clock",
+	"bluetooth",
         "tray"
     ],
     "keyboard-state": {
@@ -69,7 +70,7 @@
     },
     "network": {
         "format-wifi": "{essid} 󰤨 ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": " 󰈀 ",
         "tooltip-format": " {signalStrength}% ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected 󰤮 ",
@@ -100,6 +101,16 @@
 	"format":" 󰥔 {:%H:%M}",
         "format-alt": "  {:%A %d/%m/%EY}",
         "tooltip": false
+    },
+    "bluetooth": {
+	"format": "  ",
+	"format-disabled": " ",
+	//"format-connected": "  {device_alias}",
+	//"format-connected-battery": "  {device_alias} {device_battery_percentage}%",
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} Connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} Connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
     },
  
         "tray": {

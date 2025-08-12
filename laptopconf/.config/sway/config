@@ -32,7 +32,7 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 
 # Exit
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+# bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 # Change focus
 bindsym $mod+$left focus left
@@ -155,7 +155,9 @@ client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
 # Wallpaper
-output * bg #11111b solid_color
+output * bg ~/.config/wallpaper/mono-abstract_topo.png fit
+# exec mpvpaper -o "loop" ALL ~/.config/wallpaper/mono-abstract_topo.mp4
+# output * bg #11111b solid_color
 
 # Waybar
 exec waybar -c ~/.config/waybar/top.jsonc
@@ -192,8 +194,8 @@ assign [class="Spotify"] workspace number 9
 assign [class="discord"] workspace number 10
 
 # Hotkeys
-bindsym XF86MonBrightnessUp exec brightnessctl set +1
-bindsym XF86MonBrightnessDown exec brightnessctl set 1-
+bindsym XF86MonBrightnessUp exec brightnessctl set +1%
+bindsym XF86MonBrightnessDown exec brightnessctl set 1-%
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle

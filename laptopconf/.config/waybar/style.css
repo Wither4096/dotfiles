@@ -59,6 +59,7 @@ window#waybar.hidden {
 #memory,
 #cpu,
 #network,
+#bluetooth,
 #battery,
 #temperature,
 #clock,
@@ -96,6 +97,14 @@ window#waybar.hidden {
 
 #network {
   background-color:@sky ;
+}
+
+#bluetooth {
+  background-color:@blue;
+}
+
+#bluetooth-disabled {
+  background-color:@mantle;
 }
 
 #battery {
