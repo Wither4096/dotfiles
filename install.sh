@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S os-prober fish xorg xorg-xinit i3-wm xdg-user-dirs kitty polkit polkit-gnome feh rofi polybar zip unzip unrar intel-ucode pipewire-pulse pamixer nvidia-open nvidia-utils fastfetch thunar tumbler ffmpegthumbnailer ntfs-3g ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop discord mpv exfat-utils udiskie keepassxc imagemagick dunst xclip playerctl firefox spotify-launcher clipcat rofimoji
+sudo pacman -S os-prober fish xorg xorg-xinit i3-wm xdg-user-dirs kitty polkit polkit-gnome iptables-nft nftables feh rofi polybar zip unzip unrar intel-ucode pipewire-pulse pamixer nvidia-open nvidia-utils fastfetch thunar tumbler ffmpegthumbnailer ntfs-3g ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop discord mpv exfat-utils udiskie keepassxc imagemagick dunst xclip playerctl firefox spotify-launcher clipcat rofimoji
 
 sudo mv desktopconf/X11/xorg.conf.i /etc/X11/
 sudo mv desktopconf/X11/xorg.conf.n /etc/X11/
