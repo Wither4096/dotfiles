@@ -169,7 +169,6 @@ for_window [class="mpv"] move to workspace $ws4
 for_window [class="Virt-manager"] move to workspace $ws4
 for_window [class="KeePassXC"] move to workspace $ws7
 for_window [class="Thunar"] move to workspace $ws8
-for_window [class="feishin"] move to workspace $ws9
 for_window [class="Spotify"] move to workspace $ws9
 for_window [class="discord"] move to workspace $ws10
 
@@ -211,14 +210,13 @@ bindcode 122 exec --no-startup-id "pamixer -d 1"
 bindcode 123 exec --no-startup-id "pamixer -i 1"
 bindcode 166 exec "playerctl volume .01- --player=$(cat ~/.cache/player)"
 bindcode 167 exec "playerctl volume .01+ --player=$(cat ~/.cache/player)"
-bindcode 179 exec "if cat ~/.cache/player | grep -q 'Feishin'; then feishin; elif cat ~/.cache/player | grep -q 'spotify'; then spotify-launcher;fi"
 # if cat ~/.cache/player | grep -q 'Feishin'; then feishin; elif cat ~/.cache/player | grep -q 'spotify'; then spotify-launcher; elif cat ~/.cache/player | grep -q 'mpd'; then kitty -e ncmpcpp; else echo ""; fi
 bindcode 181 exec "playerctl play-pause --player=$(cat ~/.cache/player)"
 
 # Macropad
-#bindcode 191 exec "if pactl info|grep 'alsa_output.usb-Generic_USB_Audio-00.analog-stereo';then pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo&paplay /usr/share/sounds/oxygen/stereo/message-lowpriority.ogg;elif pactl info|grep 'alsa_output.pci-0000_00_1f.3.analog-stereo';then pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo&paplay /usr/share/sounds/oxygen/stereo/message-lowpriority.ogg;else pactl set-default-sink alsa_output.usb-Generic_USB_Audio-00.analog-stereo&paplay /usr/share/sounds/oxygen/stereo/message-lowpriority.ogg;fi"
-bindcode 191 exec "if pactl info|grep 'alsa_output.usb-Generic_USB_Audio-00.analog-stereo';then pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo&paplay /usr/share/sounds/oxygen/stereo/message-lowpriority.ogg;else pactl set-default-sink alsa_output.usb-Generic_USB_Audio-00.analog-stereo&paplay /usr/share/sounds/oxygen/stereo/message-lowpriority.ogg;fi"
-bindcode 194 exec "if cat ~/.cache/player |grep -q 'Feishin'; then echo spotify|tee ~/.cache/player;  elif cat ~/.cache/player |grep -q 'spotify'; then echo Feishin| tee ~/.cache/player;fi"
+#bindcode 191 exec "if pactl info|grep 'alsa_output.usb-Generic_USB_Audio-00.analog-stereo';then pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo&paplay /usr/share/sounds/oxygen/stereo/complete-media-burn.ogg;elif pactl info|grep 'alsa_output.pci-0000_00_1f.3.analog-stereo';then pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo&paplay /usr/share/sounds/oxygen/stereo/complete-media-burn.ogg;else pactl set-default-sink alsa_output.usb-Generic_USB_Audio-00.analog-stereo&paplay /usr/share/sounds/oxygen/stereo/complete-media-burn.ogg;fi"
+bindcode 191 exec "if pactl info|grep 'alsa_output.usb-Generic_USB_Audio-00.analog-stereo';then pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo&paplay /usr/share/sounds/oxygen/stereo/complete-media-burn.ogg;else pactl set-default-sink alsa_output.usb-Generic_USB_Audio-00.analog-stereo&paplay /usr/share/sounds/oxygen/stereo/complete-media-burn.ogg;fi"
+#bindcode 194 exec "if cat ~/.cache/player |grep -q 'Feishin'; then echo spotify|tee ~/.cache/player;  elif cat ~/.cache/player |grep -q 'spotify'; then echo Feishin| tee ~/.cache/player;fi"
 # if cat ~/.cache/player |grep -q 'Feishin'; then echo spotify|tee ~/.cache/player;  elif cat ~/.cache/player |grep -q 'spotify'; then echo mpd|tee ~/.cache/player; elif cat ~/.cache/player |grep -q 'mpd'; then echo Feishin|tee ~/.cache/player;fi
 bindcode 195 exec "playerctl shuffle toggle --player=$(cat ~/.cache/player)"
 bindcode 196 exec "playerctl previous --player=$(cat ~/.cache/player)"
@@ -235,4 +233,4 @@ bindcode 173 exec "playerctl previous --player=$(cat ~/.cache/player)"
 bindcode 174 exec "playerctl stop --player=$(cat ~/.cache/player)"
 bindsym --release $mod+Shift+s exec import png:-|tee $HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S").png|xclip -selection clipboard -t image/png&paplay /usr/share/sounds/oxygen/stereo/camera-shutter.wav
 bindsym $mod+P exec ~/.config/rofi/powermenu/powermenu.sh
-bindsym $mod+semicolon exec "rofi -modi 'emoji:rofimoji' -show emoji"
+bindsym $mod+semicolon exec "rofimoji"
