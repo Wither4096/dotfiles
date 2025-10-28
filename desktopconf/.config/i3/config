@@ -210,6 +210,7 @@ bindcode 122 exec --no-startup-id "pamixer -d 1"
 bindcode 123 exec --no-startup-id "pamixer -i 1"
 bindcode 166 exec "playerctl volume .01- --player=$(cat ~/.cache/player)"
 bindcode 167 exec "playerctl volume .01+ --player=$(cat ~/.cache/player)"
+bindcode 179 exec "if cat ~/.cache/player | grep -q 'Feishin'; then feishin; elif cat ~/.cache/player | grep -q 'spotify'; then spotify-launcher;fi"
 # if cat ~/.cache/player | grep -q 'Feishin'; then feishin; elif cat ~/.cache/player | grep -q 'spotify'; then spotify-launcher; elif cat ~/.cache/player | grep -q 'mpd'; then kitty -e ncmpcpp; else echo ""; fi
 bindcode 181 exec "playerctl play-pause --player=$(cat ~/.cache/player)"
 
