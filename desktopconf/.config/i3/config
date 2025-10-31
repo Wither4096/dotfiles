@@ -234,4 +234,4 @@ bindcode 173 exec "playerctl previous --player=$(cat ~/.cache/player)"
 bindcode 174 exec "playerctl stop --player=$(cat ~/.cache/player)"
 bindsym --release $mod+Shift+s exec import png:-|tee $HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S").png|xclip -selection clipboard -t image/png&paplay /usr/share/sounds/oxygen/stereo/camera-shutter.wav
 bindsym $mod+P exec ~/.config/rofi/powermenu/powermenu.sh
-bindsym $mod+semicolon exec "rofimoji"
+bindsym $mod+semicolon exec "rofimoji -a type copy"
