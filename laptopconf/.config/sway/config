@@ -178,11 +178,11 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
 	gsettings set $gnome-schema gtk-theme 'gtk-master'
 	gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-	gsettings set $gnome-schema cursor-theme 'Dracula-cursors'
+	gsettings set $gnome-schema cursor-theme 'catppuccin-mocha-dark-cursors'
 	gsettings set $gnome-schema font-name 'Cantarell 11'
 }
 
-seat seat0 xcursor_theme Dracula-cursors
+seat seat0 xcursor_theme catppuccin-mocha-dark-cursors
 
 # Assingments
 assign [app_id="firefox"] workspace number 2
