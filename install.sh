@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S os-prober fish xorg xorg-xinit i3-wm xdg-user-dirs kitty polkit polkit-gnome iptables-nft nftables feh rofi polybar zip unzip unrar intel-ucode pipewire-pulse pamixer oxygen-sounds nvidia-open nvidia-utils fastfetch thunar tumbler ffmpegthumbnailer ntfs-3g ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop discord mpv exfat-utils udiskie keepassxc imagemagick dunst xclip playerctl firefox spotify-launcher clipcat rofimoji
+sudo pacman -S os-prober fish xorg xorg-xinit i3-wm xdg-user-dirs kitty polkit polkit-gnome iptables-nft nftables feh rofi polybar zip unzip unrar intel-ucode pipewire-pulse pamixer oxygen-sounds nvidia-open nvidia-utils fastfetch thunar tumbler ffmpegthumbnailer ntfs-3g ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop discord mpv exfat-utils udiskie keepassxc imagemagick dunst xclip playerctl firefox spotify-launcher clipcat rofimoji xdotool
 
 sudo mv desktopconf/X11/xorg.conf.i /etc/X11/
 sudo mv desktopconf/X11/xorg.conf.n /etc/X11/
@@ -30,7 +30,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 
 cd yay-bin
 makepkg -si
-yay -S feishin-bin #mpd-mpris-bin betterlockscreen ani-cli vscodium-bin python-yams yt-dlp
+#yay -S feishin-bin #mpd-mpris-bin betterlockscreen ani-cli vscodium-bin python-yams yt-dlp
 
 printf "GRUB_GFXMODE=1360x768\nGRUB_DISABLE_OS_PROBER=false\nGRUB_THEME="/boot/grub/themes/theme/theme.txt""|sudo tee -a /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
