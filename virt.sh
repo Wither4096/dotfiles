@@ -2,7 +2,7 @@
 
 RUNDIR=$(dirname $0)
 
-sudo pacman -S qemu libvirt virt-manager iptables-nft dnsmasq #dmidecode
+sudo pacman -S qemu libvirt virt-manager dnsmasq #iptables-nft dmidecode
 
 sudo systemctl enable libvirtd.service --now
 
