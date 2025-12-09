@@ -8,6 +8,7 @@ call plug#end()
 
 colorscheme dracula
 set termguicolors
+set number relativenumber
 set viminfofile=NONE
 
 " air-line
