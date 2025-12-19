@@ -3,10 +3,12 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'jesseleite/vim-agriculture'
 Plug 'vim-airline/vim-airline'
-Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 call plug#end()
 
-colorscheme dracula
+" colorscheme dracula
+colorscheme catppuccin_mocha
 set termguicolors
 set number relativenumber
 set viminfofile=NONE
