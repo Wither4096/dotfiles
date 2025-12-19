@@ -3,6 +3,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'jesseleite/vim-agriculture'
 Plug 'vim-airline/vim-airline'
+Plug 'chrisbra/colorizer'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 call plug#end()
@@ -12,6 +13,7 @@ colorscheme catppuccin_mocha
 set termguicolors
 set number relativenumber
 set viminfofile=NONE
+autocmd VimEnter * ColorToggle
 
 " air-line
 let g:airline_powerline_fonts = 1
