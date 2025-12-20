@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S os-prober fish sway swaybg swayidle swaylock grim slurp rofi-wayland waybar kitty polkit polkit-gnome iptables-nft nftables feh zip unzip amd-ucode pipewire-pulse pamixer mesa fastfetch thunar tumbler ffmpegthumbnailer xdg-user-dirs ntfs-3g ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop mpv exfat-utils udiskie keepassxc imagemagick dunst playerctl libreoffice-still qt5-wayland xwayland brightnessctl plymouth sddm fprint qt6-svg qt6-declarative qt5-quickcontrols2 firefox spotify-launcher bluez bluez-utils blueman rofimoji wtype wl-clipboard #discord greetd greetd-tuigreet
+sudo pacman -S os-prober fish sway swaybg swayidle swaylock grim slurp rofi-wayland waybar kitty polkit polkit-gnome iptables-nft nftables feh zip unzip amd-ucode pipewire-pulse pamixer mesa fastfetch thunar tumbler ffmpegthumbnailer xdg-user-dirs ntfs-3g vifm ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop mpv exfat-utils udiskie keepassxc imagemagick dunst playerctl libreoffice-still qt5-wayland xwayland brightnessctl plymouth sddm fprint qt6-svg qt6-declarative qt5-quickcontrols2 firefox spotify-launcher bluez bluez-utils blueman rofimoji wtype wl-clipboard #discord greetd greetd-tuigreet
 
 sudo cp /etc/default/grub /etc/default/grub.old
 sudo mv files/theme /boot/grub/themes
