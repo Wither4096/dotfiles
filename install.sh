@@ -17,8 +17,11 @@ cp files/.gtkrc-2.0 $HOME
 cp desktopconf/.xinitrc $HOME
 cp desktopconf/.bashrc $HOME
 cp files/.Xresources $HOME
-mv files/.vim/ $HOME
+cp files/.vim/ $HOME
 cp files/.vimrc $HOME
+sudo cp -R files/.vim/ /root/
+sudo cp files/.vimrc /root/
+
 
 sudo cp files/99-noto-reject-nastaliq.conf /etc/fonts/conf.d/
 

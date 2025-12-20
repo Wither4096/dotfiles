@@ -12,8 +12,10 @@ sudo mv files/icons/* /usr/share/icons
 cp files/.gtkrc-2.0 $HOME
 cp laptopconf/.bashrc $HOME
 cp files/.Xresources $HOME
-mv files/.vim/ $HOME
+cp -R files/.vim/ $HOME
 cp files/.vimrc $HOME
+cp -R files/.vim/ /root/
+cp files/.vimrc /root/
 
 sudo cp files/99-noto-reject-nastaliq.conf /etc/fonts/conf.d/
 
