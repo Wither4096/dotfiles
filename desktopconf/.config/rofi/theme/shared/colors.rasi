@@ -15,4 +15,4 @@
 
 /* Import color-scheme from `colors` directory */
 
-@import "~/.config/rofi/theme/shared/dracula.rasi"
+@import "~/.config/rofi/theme/shared/catppuccin.rasi"
