@@ -9,7 +9,7 @@ sudo cp /etc/default/grub /etc/default/grub.old
 sudo mv files/theme /boot/grub/themes
 
 cp -r desktopconf/.config $HOME
-mv files/bin $HOME/.local/
+cp -r files/bin/ $HOME/.local/
 mkdir -p $HOME/Pictures/Screenshots/
 sudo mv files/themes/* /usr/share/themes
 sudo mv files/icons/* /usr/share/icons
