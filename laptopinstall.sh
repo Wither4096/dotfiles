@@ -14,6 +14,7 @@ cp laptopconf/.bashrc $HOME
 cp files/.Xresources $HOME
 cp -R files/.vim/ $HOME
 cp files/.vimrc $HOME
+cp -r files/wallpapers/ $HOME/.config
 cp -R files/.vim/ /root/
 cp files/.vimrc /root/
 
