@@ -180,7 +180,7 @@ exec_always xrandr --output HDMI-1 --mode 1920x1080
 
 # Background
 # exec xsetroot -solid "#11111b"
-exec --no-startup-id feh --bg-scale ~/.config/wallpapers/pixelgalaxy.png
+exec --no-startup-id feh --bg-scale ~/.config/wallpapers/pixelgalaxy.png --force-aliasing
 
 # Gaps
 for_window [class=".*"] border pixel 2
