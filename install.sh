@@ -2,17 +2,17 @@
 
 sudo pacman -S os-prober fish xorg xorg-xinit i3-wm xdg-user-dirs kitty polkit polkit-gnome iptables-nft nftables feh rofi polybar zip unzip unrar intel-ucode pipewire-pulse pamixer oxygen-sounds nvidia-open nvidia-utils fastfetch thunar tumbler ffmpegthumbnailer ntfs-3g vifm ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop discord mpv exfat-utils udiskie keepassxc imagemagick dunst xclip playerctl firefox spotify-launcher clipcat rofimoji xdotool
 
-sudo mv desktopconf/X11/xorg.conf.i /etc/X11/
-sudo mv desktopconf/X11/xorg.conf.n /etc/X11/
-sudo mv desktopconf/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
+sudo cp desktopconf/X11/xorg.conf.i /etc/X11/
+sudo cp desktopconf/X11/xorg.conf.n /etc/X11/
+sudo cp desktopconf/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
 sudo cp /etc/default/grub /etc/default/grub.old
-sudo mv files/theme /boot/grub/themes
+sudo cp -r files/theme/ /boot/grub/themes
 
 cp -r desktopconf/.config $HOME
 cp -r files/bin/ $HOME/.local/
 mkdir -p $HOME/Pictures/Screenshots/
-sudo mv files/themes/* /usr/share/themes
-sudo mv files/icons/* /usr/share/icons
+sudo cp -r files/themes/ /usr/share/
+sudo cp -r files/icons/ /usr/share/
 cp files/.gtkrc-2.0 $HOME
 cp desktopconf/.xinitrc $HOME
 cp desktopconf/.bashrc $HOME
