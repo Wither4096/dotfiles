@@ -173,7 +173,7 @@ for_window [class="Spotify"] move to workspace $ws9
 for_window [class="discord"] move to workspace $ws10
 
 # Polybar
-exec_always "polybar-msg cmd quit;polybar polytop -q & disown;polybar polybottom -q & disown"
+exec_always "polybar-msg cmd quit;polybar -c ~/.config/polybar/config-powerline.ini polytop -q & disown;polybar -c ~/.config/polybar/config-powerline.ini polybottom -q & disown"
 
 # Resolution
 exec_always xrandr --output HDMI-1 --mode 1920x1080

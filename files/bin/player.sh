@@ -14,7 +14,7 @@ PLAYER=$(cat ~/.cache/player)
 # Format of the information displayed
 # Eg. {{ artist }} - {{ album }} - {{ title }}
 # See more attributes here: https://github.com/altdesktop/playerctl/#printing-properties-and-metadata
-FORMAT=" {{ title }} - {{ artist }} "
+FORMAT=" {{ trunc(title,32) }} - {{ trunc(artist,32) }} "
 
 # Sends $2 as message to all polybar PIDs that are part of $1
 update_hooks() {
