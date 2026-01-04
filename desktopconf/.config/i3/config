@@ -217,7 +217,7 @@ bindcode 181 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/
 
 # Macropad
 #bindcode 191 exec --no-startup-id "if pactl info|grep 'alsa_output.usb-Generic_USB_Audio-00.analog-stereo';then pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo&paplay /usr/share/sounds/oxygen/stereo/complete-media-burn.ogg;elif pactl info|grep 'alsa_output.pci-0000_00_1f.3.analog-stereo';then pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo&paplay /usr/share/sounds/oxygen/stereo/complete-media-burn.ogg;else pactl set-default-sink alsa_output.usb-Generic_USB_Audio-00.analog-stereo&paplay /usr/share/sounds/oxygen/stereo/complete-media-burn.ogg;fi"
-bindcode 191 exec --no-startup-id "~/.local/bin/audioswitch.sh"
+bindcode 191 exec --no-startup-id "~/.local/scripts/audioswitch.sh"
 #bindcode 194 exec --no-startup-id "if cat ~/.cache/player |grep -q 'Feishin'; then echo spotify|tee ~/.cache/player;  elif cat ~/.cache/player |grep -q 'spotify'; then echo Feishin| tee ~/.cache/player;fi"
 # if cat ~/.cache/player |grep -q 'Feishin'; then echo spotify|tee ~/.cache/player;  elif cat ~/.cache/player |grep -q 'spotify'; then echo mpd|tee ~/.cache/player; elif cat ~/.cache/player |grep -q 'mpd'; then echo Feishin|tee ~/.cache/player;fi
 bindcode 195 exec --no-startup-id "playerctl shuffle toggle --player=$(cat ~/.cache/player)"
