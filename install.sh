@@ -9,7 +9,7 @@ sudo cp /etc/default/grub /etc/default/grub.old
 sudo cp -r files/grubthemes/catppuccin /boot/grub/themes
 
 cp -r desktopconf/.config $HOME
-cp -r files/bin/ $HOME/.local/
+cp -r files/scripts/ $HOME/.local/
 mkdir -p $HOME/Pictures/Screenshots/
 sudo cp -r files/themes/ /usr/share/
 sudo cp -r files/icons/ /usr/share/

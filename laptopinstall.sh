@@ -6,7 +6,7 @@ sudo cp /etc/default/grub /etc/default/grub.old
 sudo cp -r files/grubthemes/catppuccin /boot/grub/themes
 
 cp -r laptopconf/.config $HOME
-cp -r files/bin $HOME/.local/
+cp -r files/scripts $HOME/.local/
 sudo cp -r files/themes/ /usr/share/
 sudo cp -r files/icons/ /usr/share/
 cp files/.gtkrc-2.0 $HOME
