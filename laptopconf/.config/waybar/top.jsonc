@@ -3,16 +3,23 @@
     "height": 45,
     "spacing": 4,
     "modules-left": [
+	    "custom/player-icon",
+	    "custom/player-volume",
+	    "custom/player-info",
+	    "custom/player-prev",
+	    "custom/player-play-pause",
+	    "custom/player-next"
     ],
     "modules-center": [
         "sway/window"
     ],
     "modules-right": [
         "custom/power",
+	"custom/notifications-toggle",
         "pulseaudio",
-        "backlight",
         "memory",
         "cpu",
+        "backlight",
         "network",
         "battery",
         "temperature",
@@ -20,6 +27,32 @@
 	"bluetooth",
         "tray"
     ],
+    "custom/player-icon":{
+	    "format": "  "
+    },
+    "custom/player-volume":{
+	    "format": "{}",
+	    "exec": "~/.local/bin/playervol.sh",
+	    "interval": 1
+    },
+    "custom/player-info":{
+	    "format": "{}",
+	    "exec": "~/.local/bin/player.sh",
+	    "interval": 1
+    },
+    "custom/player-prev":{
+	    "format": "  ",
+	    "on-click": "playerctl previous --player=$(cat ~/.cache/player)"
+    },
+    "custom/player-play-pause":{
+	    "exec": "playerctl status | grep -q Playing && echo '  ' || echo '  '",
+	    "on-click": "playerctl play-pause --player=$(cat ~/.cache/player)",
+	    "interval": 1
+    },
+    "custom/player-next":{
+	    "format": "  ",
+	    "on-click": "playerctl next --player=$(cat ~/.cache/player)"
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -46,6 +79,12 @@
         "format" : " ⏻ ",
 		"tooltip": false,
 		"on-click": "$HOME/.config/rofi/powermenu/powermenu.sh"
+    },
+    "custom/notifications-toggle": {
+	    "format": "{}",
+	    "exec": "~/.local/bin/dunsttoggle.sh",
+	    "on-click": "dunstctl set-paused toggle",
+	    "interval": 1
     },
     "pulseaudio": {
         "format": "{volume}%  {format_source}",
@@ -104,7 +143,7 @@
     },
     "bluetooth": {
 	"format": "  ",
-	"format-disabled": " ",
+	"format-disabled": "",
 	//"format-connected": "  {device_alias}",
 	//"format-connected-battery": "  {device_alias} {device_battery_percentage}%",
 	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} Connected",

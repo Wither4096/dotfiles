@@ -52,8 +52,15 @@ window#waybar.hidden {
   background-color: @red;
 }
 
+#custom-player-icon,
+#custom-player-volume,
+#custom-player-info,
+#custom-player-prev,
+#custom-player-play-pause,
+#custom-player-next,
 #window,
 #custom-power,
+#custom-notifications-toggle,
 #pulseaudio,
 #backlight,
 #memory,
@@ -71,12 +78,39 @@ window#waybar.hidden {
   color: @mantle;
 }
 
+#custom-player-icon{
+	background-color: @blue;
+}
+#custom-player-volume{
+	background-color: @maroon;
+}
+#custom-player-info{
+	background-color: @sapphire;
+}
+#custom-player-prev{
+	background-color: @blue;
+}
+#custom-player-play-pause{
+	background-color: @mauve;
+}
+#custom-player-next{
+	background-color: @blue;
+}
+
 #window{
 	background-color: @mauve;
 }
 
+window#waybar.empty #window {
+ background:none;
+}
+
 #custom-power {
   background-color:@teal ;
+}
+
+#custom-notifications-toggle{
+	background-color:@lavender;
 }
 
 #pulseaudio {
@@ -84,7 +118,7 @@ window#waybar.hidden {
 }
 
 #backlight {
-  background-color:@lavender ;
+  background-color:@green ;
 }
 
 #memory {

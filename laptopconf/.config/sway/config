@@ -142,8 +142,8 @@ titlebar_border_thickness 0
 
 # Gaps
 for_window [class=".*"] border pixel 2
-gaps outer 5
-gaps inner 5
+gaps outer 10
+gaps inner 10
 
 # Window Colours
 # target                 title     bg    text   indicator  border
@@ -156,8 +156,9 @@ client.background        $base
 
 # Wallpaper
 # output * bg ~/.config/wallpapers/mono-abstract_topo.png fit
+# output * bg ~/.config/wallpapers/pixelgalaxy.png fit
 # exec mpvpaper -o "loop" ALL ~/.config/wallpaper/mono-abstract_topo.mp4
-exec mpvpaper -o '--scale=nearest loop' ALL ~/.config/wallpapers/pixelnebula.gif
+exec mpvpaper -o '--scale=nearest loop input-ipc-server=/tmp/mpv-socket-eDP-1' ALL ~/.config/wallpapers/pixelnebula.gif
 # output * bg #11111b solid_color
 
 # Waybar

@@ -37,11 +37,11 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
-    "custom/wallpapertoggle": {
-	    "format": "{icon}\t",
-	    "format-icons":{
-		    "default": "  "
-	    },
-	    "on-click" :"~/.local/bin/animatebackground.sh"
-    }
+    //"custom/wallpapertoggle": {
+    //        "format": "{icon}\t",
+    //        "format-icons":{
+    //    	    "default": "  "
+    //        },
+    //        "on-click" :"~/.local/bin/animatebackground.sh"
+    //}
 }
