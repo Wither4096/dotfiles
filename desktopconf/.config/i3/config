@@ -179,8 +179,8 @@ exec_always "polybar-msg cmd quit;polybar -c ~/.config/polybar/config-powerline.
 exec_always xrandr --output HDMI-1 --mode 1920x1080
 
 # Background
-# exec xsetroot -solid "#11111b"
-exec --no-startup-id feh --bg-scale ~/.config/wallpapers/pixelgalaxy.png --force-aliasing
+# exec xsetroot -solid $crust
+exec --no-startup-id feh --bg-scale ~/.config/wallpapers/pixelnebula.png --force-aliasing
 
 # Gaps
 for_window [class=".*"] border pixel 2
@@ -216,18 +216,15 @@ bindcode 179 exec --no-startup-id "if cat ~/.cache/player | grep -q 'Feishin'; t
 bindcode 181 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/player)"
 
 # Macropad
-#bindcode 191 exec --no-startup-id "if pactl info|grep 'alsa_output.usb-Generic_USB_Audio-00.analog-stereo';then pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo&paplay /usr/share/sounds/oxygen/stereo/complete-media-burn.ogg;elif pactl info|grep 'alsa_output.pci-0000_00_1f.3.analog-stereo';then pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo&paplay /usr/share/sounds/oxygen/stereo/complete-media-burn.ogg;else pactl set-default-sink alsa_output.usb-Generic_USB_Audio-00.analog-stereo&paplay /usr/share/sounds/oxygen/stereo/complete-media-burn.ogg;fi"
 bindcode 191 exec --no-startup-id "~/.local/scripts/audioswitch.sh"
-#bindcode 194 exec --no-startup-id "if cat ~/.cache/player |grep -q 'Feishin'; then echo spotify|tee ~/.cache/player;  elif cat ~/.cache/player |grep -q 'spotify'; then echo Feishin| tee ~/.cache/player;fi"
-# if cat ~/.cache/player |grep -q 'Feishin'; then echo spotify|tee ~/.cache/player;  elif cat ~/.cache/player |grep -q 'spotify'; then echo mpd|tee ~/.cache/player; elif cat ~/.cache/player |grep -q 'mpd'; then echo Feishin|tee ~/.cache/player;fi
+#bindcode 194 exec --no-startup-id "if cat ~/.cache/player |grep -q 'spotify'; then echo mpd|tee ~/.cache/player; elif cat ~/.cache/player |grep -q 'mpd'; then echo spotify|tee ~/.cache/player;fi"
 bindcode 195 exec --no-startup-id "playerctl shuffle toggle --player=$(cat ~/.cache/player)"
 bindcode 196 exec --no-startup-id "playerctl previous --player=$(cat ~/.cache/player)"
 bindcode 197 exec --no-startup-id "playerctl stop --player=$(cat ~/.cache/player)"
 bindcode 198 exec --no-startup-id "playerctl next --player=$(cat ~/.cache/player)"
 bindcode 199 --release exec --no-startup-id import -window root png:-|tee $HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S")-full.png|xclip -selection clipboard -t image/png&paplay /usr/share/sounds/oxygen/stereo/camera-shutter.wav
-bindcode 200 exec --no-startup-id "if dunstctl is-paused -e;then dunstctl set-paused toggle&paplay /usr/share/sounds/oxygen/stereo/game-over-winner.ogg;else dunstctl set-paused toggle&paplay /usr/share/sounds/oxygen/stereo/game-over-loser.ogg;fi"
-#bindcode 202 exec --no-startup-id "pamixer --source rnnoise_source -t&paplay /usr/share/sounds/oxygen/stereo/message-contact-out.ogg"
-bindcode 202 exec --no-startup-id "if pamixer --source @DEFAULT_SOURCE@ --get-mute|grep 'true';then pamixer --source @DEFAULT_SOURCE@ -t&paplay /usr/share/sounds/oxygen/stereo/message-contact-in.ogg;else pamixer --source @DEFAULT_SOURCE@ -t&paplay /usr/share/sounds/oxygen/stereo/message-contact-out.ogg;fi"
+bindcode 200 exec --no-startup-id "~/.local/scripts/dunsttoggle.sh"
+bindcode 202 exec --no-startup-id "~/.local/scripts/mictoggle.sh"
 # Other
 bindcode 171 exec --no-startup-id "playerctl next --player=$(cat ~/.cache/player)"
 bindcode 172 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/player)"
