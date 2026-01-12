@@ -155,11 +155,10 @@ client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
 # Wallpaper
-# output * bg ~/.config/wallpapers/mono-abstract_topo.png fit
-# output * bg ~/.config/wallpapers/pixelgalaxy.png fit
-# exec mpvpaper -o "loop" ALL ~/.config/wallpaper/mono-abstract_topo.mp4
-exec mpvpaper -o '--scale=nearest loop input-ipc-server=/tmp/mpv-socket-eDP-1' ALL ~/.config/wallpapers/pixelnebula.gif
+# exec mpvpaper -o '--scale=nearest loop input-ipc-server=/tmp/mpv-socket-eDP-1' ALL ~/.config/wallpapers/pixelnebula.gif
 # output * bg #11111b solid_color
+output * adaptive_sync on
+output * bg ~/.config/wallpapers/pixelnebula.png fit
 
 # Waybar
 exec waybar -c ~/.config/waybar/top.jsonc
