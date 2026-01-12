@@ -17,6 +17,7 @@ cp files/.vimrc $HOME
 cp -r files/wallpapers/ $HOME/.config
 cp -R files/.vim/ /root/
 cp files/.vimrc /root/
+sudo cp files/00-lid.conf /etc/systemd/logind.conf.d/
 
 sudo cp files/99-noto-reject-nastaliq.conf /etc/fonts/conf.d/
 
