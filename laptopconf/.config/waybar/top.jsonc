@@ -82,7 +82,7 @@
     },
     "custom/notifications-toggle": {
 	    "format": "{}",
-	    "exec": "~/.local/scripts/dunsttoggle.sh",
+	    "exec": "~/.local/scripts/dunsticon.sh",
 	    "on-click": "dunstctl set-paused toggle",
 	    "interval": 1
     },

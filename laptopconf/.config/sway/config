@@ -211,27 +211,26 @@ bindsym $mod+Shift+s exec grim -g "$(slurp)" -|tee -a "$HOME/Pictures/Screenshot
 bindsym $mod+semicolon exec "rofimoji -a type copy"
 
 # Docked 
-bindcode 121 exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-bindcode 122 exec --no-startup-id "pamixer -d 1"
-bindcode 123 exec --no-startup-id "pamixer -i 1"
-bindcode 166 exec --no-startup-id "playerctl volume .01- --player=$(cat ~/.cache/player)"
-bindcode 167 exec --no-startup-id "playerctl volume .01+ --player=$(cat ~/.cache/player)"
-bindcode 179 exec --no-startup-id "if cat ~/.cache/player | grep -q 'spotify'; then feishin; elif cat ~/.cache/player | grep -q 'mpd'; then 'kitty -e ncmpcpp';fi"
-bindcode 181 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/player)"
-# Macropad
-bindcode 191 exec --no-startup-id "~/.local/scripts/audioswitch.sh"
-bindcode 195 exec --no-startup-id "playerctl shuffle toggle --player=$(cat ~/.cache/player)"
-bindcode 196 exec --no-startup-id "playerctl previous --player=$(cat ~/.cache/player)"
-bindcode 197 exec --no-startup-id "playerctl stop --player=$(cat ~/.cache/player)"
-bindcode 198 exec --no-startup-id "playerctl next --player=$(cat ~/.cache/player)"
-bindcode 199 exec grim -|tee -a "$HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S - Full").png"|wl-copy
-bindcode 200 exec --no-startup-id "~/.local/scripts/dunsttoggle.sh"
-bindcode 202 exec --no-startup-id "~/.local/scripts/mictoggle.sh"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 121 exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 122 exec --no-startup-id "pamixer -d 1"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 123 exec --no-startup-id "pamixer -i 1"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 166 exec --no-startup-id "playerctl volume .01- --player=$(cat ~/.cache/player)"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 167 exec --no-startup-id "playerctl volume .01+ --player=$(cat ~/.cache/player)"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 179 exec --no-startup-id "if cat ~/.cache/player | grep -q 'spotify'; then feishin; elif cat ~/.cache/player | grep -q 'mpd'; then 'kitty -e ncmpcpp';fi"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 181 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/player)"
+# Macroepad
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 191 exec --no-startup-id "~/.local/scripts/audioswitch.sh"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 195 exec --no-startup-id "playerctl shuffle toggle --player=$(cat ~/.cache/player)"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 196 exec --no-startup-id "playerctl previous --player=$(cat ~/.cache/player)"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 197 exec --no-startup-id "playerctl stop --player=$(cat ~/.cache/player)"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 198 exec --no-startup-id "playerctl next --player=$(cat ~/.cache/player)"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 199 exec grim -|tee -a "$HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S - Full").png"|wl-copy
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 200 exec --no-startup-id "~/.local/scripts/dunsttoggle.sh"
 # Other
-bindcode 171 exec --no-startup-id "playerctl next --player=$(cat ~/.cache/player)"
-bindcode 172 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/player)"
-bindcode 173 exec --no-startup-id "playerctl previous --player=$(cat ~/.cache/player)"
-bindcode 174 exec --no-startup-id "playerctl stop --player=$(cat ~/.cache/player)"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 171 exec --no-startup-id "playerctl next --player=$(cat ~/.cache/player)"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 172 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/player)"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 173 exec --no-startup-id "playerctl previous --player=$(cat ~/.cache/player)"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 174 exec --no-startup-id "playerctl stop --player=$(cat ~/.cache/player)"
 bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 202 exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Display Sleep
