@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S os-prober fish sway swaybg swayidle swaylock grim slurp rofi-wayland waybar kitty polkit polkit-gnome iptables-nft nftables imv zip unzip amd-ucode pipewire-pulse pamixer wiremix mesa fastfetch thunar tumbler ffmpegthumbnailer xdg-user-dirs ntfs-3g vifm ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop mpv exfat-utils udiskie keepassxc imagemagick dunst playerctl libreoffice-still qt5-wayland xwayland brightnessctl plymouth sddm fprint qt6-svg qt6-declarative qt5-quickcontrols2 firefox spotify-launcher bluez bluez-utils blueman rofimoji wtype wl-clipboard #discord greetd greetd-tuigreet
+sudo pacman -S os-prober fish sway swaybg swayidle swaylock grim slurp rofi-wayland waybar kitty polkit polkit-gnome iptables-nft nftables imv zip unzip amd-ucode pipewire-pulse pamixer wiremix mesa fastfetch thunar tumbler ffmpegthumbnailer xdg-user-dirs ntfs-3g vifm ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop mpv exfat-utils udiskie keepassxc imagemagick dunst playerctl libreoffice-still qt5-wayland xwayland brightnessctl plymouth sddm fprint qt6-svg qt6-declarative qt5-quickcontrols2 firefox spotify-launcher bluez bluez-utils blueman rofimoji wtype wl-clipboard tlp openssh #discord greetd greetd-tuigreet
 
 sudo cp /etc/default/grub /etc/default/grub.old
 sudo cp -r files/grubthemes/catppuccin /boot/grub/themes
@@ -18,6 +18,7 @@ cp -r files/wallpapers/ $HOME/.config
 cp -R files/.vim/ /root/
 cp files/.vimrc /root/
 sudo cp files/00-lid.conf /etc/systemd/logind.conf.d/
+sudo cp files/20-limits.conf /etc/tlp.d/
 
 sudo cp files/99-noto-reject-nastaliq.conf /etc/fonts/conf.d/
 
@@ -26,6 +27,7 @@ sudo cp files/99-noto-reject-nastaliq.conf /etc/fonts/conf.d/
 # unzip linux-rnnoise.zip -d ~/.local/share/noise-suppression
 
 sudo systemctl enable sddm.service
+sudo systemctl enable tlp.service
 systemctl --user enable --now pipewire.service
 
 git clone https://aur.archlinux.org/yay-bin.git

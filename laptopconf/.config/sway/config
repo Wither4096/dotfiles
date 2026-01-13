@@ -210,6 +210,30 @@ bindsym Print exec grim -|tee -a "$HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%
 bindsym $mod+Shift+s exec grim -g "$(slurp)" -|tee -a "$HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S").png"|wl-copy
 bindsym $mod+semicolon exec "rofimoji -a type copy"
 
+# Docked 
+bindcode 121 exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+bindcode 122 exec --no-startup-id "pamixer -d 1"
+bindcode 123 exec --no-startup-id "pamixer -i 1"
+bindcode 166 exec --no-startup-id "playerctl volume .01- --player=$(cat ~/.cache/player)"
+bindcode 167 exec --no-startup-id "playerctl volume .01+ --player=$(cat ~/.cache/player)"
+bindcode 179 exec --no-startup-id "if cat ~/.cache/player | grep -q 'spotify'; then feishin; elif cat ~/.cache/player | grep -q 'mpd'; then 'kitty -e ncmpcpp';fi"
+bindcode 181 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/player)"
+# Macropad
+bindcode 191 exec --no-startup-id "~/.local/scripts/audioswitch.sh"
+bindcode 195 exec --no-startup-id "playerctl shuffle toggle --player=$(cat ~/.cache/player)"
+bindcode 196 exec --no-startup-id "playerctl previous --player=$(cat ~/.cache/player)"
+bindcode 197 exec --no-startup-id "playerctl stop --player=$(cat ~/.cache/player)"
+bindcode 198 exec --no-startup-id "playerctl next --player=$(cat ~/.cache/player)"
+bindcode 199 exec grim -|tee -a "$HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S - Full").png"|wl-copy
+bindcode 200 exec --no-startup-id "~/.local/scripts/dunsttoggle.sh"
+bindcode 202 exec --no-startup-id "~/.local/scripts/mictoggle.sh"
+# Other
+bindcode 171 exec --no-startup-id "playerctl next --player=$(cat ~/.cache/player)"
+bindcode 172 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/player)"
+bindcode 173 exec --no-startup-id "playerctl previous --player=$(cat ~/.cache/player)"
+bindcode 174 exec --no-startup-id "playerctl stop --player=$(cat ~/.cache/player)"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 202 exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
 # Display Sleep
 exec swayidle -w \
 timeout 180 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
@@ -224,6 +248,7 @@ exec clipcatd
 bindsym $mod+Shift+v exec clipcat-menu
 bindsym $mod+Shift+n exec clipcatctl clear
 
-
+# Use laptop microphone if nothing else is connected
+exec "pactl set-default-source alsa_input.pci-0000_04_00.6.HiFi__Mic1__source"
 
 include /etc/sway/config.d/*
