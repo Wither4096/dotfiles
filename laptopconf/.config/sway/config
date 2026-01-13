@@ -124,6 +124,9 @@ bindsym $mod+r mode "Resize"
 
 
 
+# Disable Smart Grouping
+seat * keyboard_grouping none
+
 # TouchPad Tap to Click
 input "1267:12729:ASUE140D:00_04F3:31B9_Touchpad" {
 	tap enabled
@@ -147,8 +150,8 @@ titlebar_border_thickness 0
 
 # Gaps
 for_window [class=".*"] border pixel 2
-gaps outer 10
-gaps inner 10
+gaps outer 5
+gaps inner 5
 
 # Window Colours
 # target                 title     bg    text   indicator  border
@@ -218,7 +221,7 @@ bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 166 exec --no
 bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 167 exec --no-startup-id "playerctl volume .01+ --player=$(cat ~/.cache/player)"
 bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 179 exec --no-startup-id "if cat ~/.cache/player | grep -q 'spotify'; then feishin; elif cat ~/.cache/player | grep -q 'mpd'; then 'kitty -e ncmpcpp';fi"
 bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 181 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/player)"
-# Macroepad
+# Macropad
 bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 191 exec --no-startup-id "~/.local/scripts/audioswitch.sh"
 bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 195 exec --no-startup-id "playerctl shuffle toggle --player=$(cat ~/.cache/player)"
 bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 196 exec --no-startup-id "playerctl previous --player=$(cat ~/.cache/player)"

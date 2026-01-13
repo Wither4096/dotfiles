@@ -33,6 +33,8 @@
     "custom/player-volume":{
 	    "format": "{}",
 	    "exec": "~/.local/scripts/playervol.sh",
+	    "on-scroll-up":"playerctl volume .05+ --player=$(cat ~/.cache/player)",
+	    "on-scroll-down":"playerctl volume .05- --player=$(cat ~/.cache/player)",
 	    "interval": 1
     },
     "custom/player-info":{
