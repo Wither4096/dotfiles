@@ -15,6 +15,6 @@ else
 	polybar-msg action "#systray.hook.0"
 	stalonetray &
 	disown
-	sleep 0.01
+	sleep 1
 	xdo hide -n stalonetray
 fi
