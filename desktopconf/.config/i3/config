@@ -203,6 +203,9 @@ exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
 
+#stalonetray
+exec ~/.local/scripts/stalonetray.sh
+
 # Hotkeys
 
 # Knobs
@@ -216,9 +219,8 @@ bindcode 179 exec --no-startup-id "if cat ~/.cache/player | grep -q 'Feishin'; t
 bindcode 181 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/player)"
 
 # Macropad
-bindcode 191 exec --no-startup-id "~/.local/scripts/audioswitch.sh"
 #bindcode 194 exec --no-startup-id "if cat ~/.cache/player |grep -q 'spotify'; then echo mpd|tee ~/.cache/player; elif cat ~/.cache/player |grep -q 'mpd'; then echo spotify|tee ~/.cache/player;fi"
-bindcode 195 exec --no-startup-id "playerctl shuffle toggle --player=$(cat ~/.cache/player)"
+bindcode 195 exec --no-startup-id "~/.local/scripts/audioswitch.sh"
 bindcode 196 exec --no-startup-id "playerctl previous --player=$(cat ~/.cache/player)"
 bindcode 197 exec --no-startup-id "playerctl stop --player=$(cat ~/.cache/player)"
 bindcode 198 exec --no-startup-id "playerctl next --player=$(cat ~/.cache/player)"
