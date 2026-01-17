@@ -222,8 +222,7 @@ bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 167 exec --no
 bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 179 exec --no-startup-id "if cat ~/.cache/player | grep -q 'spotify'; then feishin; elif cat ~/.cache/player | grep -q 'mpd'; then 'kitty -e ncmpcpp';fi"
 bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 181 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/player)"
 # Macropad
-bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 191 exec --no-startup-id "~/.local/scripts/audioswitch.sh"
-bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 195 exec --no-startup-id "playerctl shuffle toggle --player=$(cat ~/.cache/player)"
+bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 195 exec --no-startup-id "~/.local/scripts/audioswitch.sh"
 bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 196 exec --no-startup-id "playerctl previous --player=$(cat ~/.cache/player)"
 bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 197 exec --no-startup-id "playerctl stop --player=$(cat ~/.cache/player)"
 bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 198 exec --no-startup-id "playerctl next --player=$(cat ~/.cache/player)"
@@ -238,7 +237,7 @@ bindcode --input-device="4489:34880:USB_Composite_Device_Keyboard" 202 exec --no
 
 # Display Sleep
 exec swayidle -w \
-timeout 180 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+timeout 180 'swaymsg "output eDP-1 power off"' resume 'swaymsg "output eDP-1 power on"'
 
 # KVM Display
 bindswitch --reload --locked lid:on output eDP-1 disable
