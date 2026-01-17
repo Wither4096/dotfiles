@@ -243,7 +243,7 @@ timeout 180 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
 # KVM Display
 bindswitch --reload --locked lid:on output eDP-1 disable
 bindswitch --reload --locked lid:off output eDP-1 enable
-output HDMI-A-1 mode 1920x1080
+exec_always kanshi -c kanshi -c ~/.config/kanshi/config
 
 # Clipcat
 exec clipcatd

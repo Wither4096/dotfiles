@@ -1,0 +1,31 @@
+output "Kingston Tech Corporation 24S160 0x00000001" {
+	mode 1920x1080
+	scale 1
+	alias $HOME_EXTERNAL
+}
+
+output HDMI-A-1 {
+	mode 1920x1080
+	scale 1
+	alias $PROJECT
+}
+
+output "Samsung Display Corp. 0x4171 Unknown" {
+	mode 2880x1800
+	scale 2
+	alias $INTERNAL
+}
+
+profile undocked {
+	output $INTERNAL enable
+}
+
+profile docked {
+	output $INTERNAL disable
+	output $HOME_EXTERNAL enable
+}
+
+profile project {
+	output $INTERNAL enable
+	output $PROJECT enable
+}
