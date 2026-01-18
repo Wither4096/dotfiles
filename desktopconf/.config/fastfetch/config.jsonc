@@ -85,7 +85,7 @@
       {
             "type": "media",
             "key": "{#separator}│  {#keys}󰝚 Music",
-            "keyColor": "34"
+	    "format": "{title:-32} - {artist:-32}"
         },
       {
         "type": "custom",
@@ -112,6 +112,12 @@
       {
         "type": "memory",
         "key": "{#separator}│  {#keys}󰍛 Memory"
+      },
+      {
+	      "type": "battery",
+	      "key": "{#separator}│  {#keys} Battery",
+	      "exclude": "Charging", 
+	      "format": "{capacity}{?time-hours} ({time-hours}:{time-seconds}){?} [{status}]"
       },
       //{
       //        "type": "localip",
