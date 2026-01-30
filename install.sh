@@ -7,6 +7,9 @@ sudo cp desktopconf/X11/xorg.conf.n /etc/X11/
 sudo cp desktopconf/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
 sudo cp /etc/default/grub /etc/default/grub.old
 sudo cp -r files/grubthemes/catppuccin /boot/grub/themes
+echo "zram" | sudo tee /etc/modules-load.d/zram.conf
+sudo cp files/99-zram.rules /etc/udev/rules.d/
+printf "\n# zram\n/dev/zram0 none swap defaults,discard,pri=100,x-systemd.makefs 0 0\n"|sudo tee -a /etc/fstab
 
 cp -r desktopconf/.config $HOME
 cp -r files/scripts/ $HOME/.local/
