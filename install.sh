@@ -20,6 +20,7 @@ cp files/.gtkrc-2.0 $HOME
 cp desktopconf/.xinitrc $HOME
 cp desktopconf/.bashrc $HOME
 cp files/.Xresources $HOME
+cp files/.Xmodmap $HOME
 cp -r files/.vim/ $HOME
 cp files/.vimrc $HOME
 cp -r files/wallpapers/ $HOME/.config
