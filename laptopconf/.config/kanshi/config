@@ -20,12 +20,12 @@ profile undocked {
 	output $INTERNAL enable
 }
 
-profile docked {
-	output $INTERNAL disable
-	output $HOME_EXTERNAL enable
-}
-
 profile project {
 	output $INTERNAL enable
 	output $PROJECT enable
+}
+
+profile docked {
+	output $INTERNAL disable
+	output $HOME_EXTERNAL enable
 }

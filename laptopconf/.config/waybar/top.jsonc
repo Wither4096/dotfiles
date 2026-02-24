@@ -95,6 +95,7 @@
         "format-source": "  ",
         "format-source-muted": "  ",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+	"on-click-right": "pamixer --source @DEFAULT_SOURCE@ -t",
         "tooltip": false
     },
     "backlight": {

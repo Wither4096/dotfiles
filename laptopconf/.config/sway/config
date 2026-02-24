@@ -186,7 +186,7 @@ set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
 	gsettings set $gnome-schema gtk-theme 'gtk-master'
-	gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+	gsettings set $gnome-schema icon-theme 'pixora'
 	gsettings set $gnome-schema cursor-theme 'catppuccin-mocha-dark-cursors'
 	gsettings set $gnome-schema font-name 'Cantarell 11'
 }
