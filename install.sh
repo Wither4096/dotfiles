@@ -15,7 +15,6 @@ cp -r desktopconf/.config $HOME
 cp -r files/scripts/ $HOME/.local/
 mkdir -p $HOME/Pictures/Screenshots/
 sudo cp -r files/themes/ /usr/share/
-sudo cp -r files/icons/ /usr/share/
 cp files/.gtkrc-2.0 $HOME
 cp desktopconf/.xinitrc $HOME
 cp desktopconf/.bashrc $HOME
@@ -40,6 +39,13 @@ git clone https://aur.archlinux.org/yay-bin.git
 
 cd yay-bin
 makepkg -si
+
+git clone https://github.com/tsora1603/pixora-icons.git
+cd pixora-icons
+mkdir ~/.local/share/icons
+cp -r pixelitos-dark/ ~/.local/share/icons
+cp -r pixelitos-light/ ~/.local/share/icons
+cp -r pixora/ ~/.local/share/icons
 
 printf "GRUB_GFXMODE=1360x768\nGRUB_DISABLE_OS_PROBER=false\nGRUB_THEME="/boot/grub/themes/catppuccin/theme.txt""|sudo tee -a /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
