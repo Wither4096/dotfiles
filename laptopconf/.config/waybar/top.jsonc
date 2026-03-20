@@ -17,6 +17,7 @@
         "custom/power",
 	"custom/notifications-toggle",
         "pulseaudio",
+        "pulseaudio#mic",
         "memory",
         "cpu",
         "backlight",
@@ -47,7 +48,7 @@
 	    "on-click": "playerctl previous --player=$(cat ~/.cache/player)"
     },
     "custom/player-play-pause":{
-	    "exec": "playerctl status | grep -q Playing && echo '  ' || echo '  '",
+	    "exec": "playerctl --player=$(cat ~/.cache/player) status | grep -q Playing && echo '  ' || echo '  '",
 	    "on-click": "playerctl play-pause --player=$(cat ~/.cache/player)",
 	    "interval": 1
     },
@@ -89,13 +90,20 @@
 	    "interval": 1
     },
     "pulseaudio": {
-        "format": "{volume}%  {format_source}",
-        "format-muted": " {format_source}",
         //"format-source": "{volume}% ",
+        // "format-source": "  ",
+        // "format-source-muted": "  ",
+	//"on-click-right": "pamixer --source @DEFAULT_SOURCE@ -t",
+        "format": "{volume}%  ",
+        "format-muted": " ",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "tooltip": false
+    },
+    "pulseaudio#mic":{
+	"format":"{format_source}",
         "format-source": "  ",
         "format-source-muted": "  ",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-	"on-click-right": "pamixer --source @DEFAULT_SOURCE@ -t",
+	"on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "tooltip": false
     },
     "backlight": {

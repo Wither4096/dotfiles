@@ -62,6 +62,7 @@ window#waybar.hidden {
 #custom-power,
 #custom-notifications-toggle,
 #pulseaudio,
+#pulseaudio#mic,
 #backlight,
 #memory,
 #cpu,
@@ -114,6 +115,10 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
+  background-color:@mauve ;
+}
+
+#pulseaudio#mic {
   background-color:@mauve ;
 }
 

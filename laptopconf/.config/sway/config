@@ -65,6 +65,7 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+bindsym $mod+equal workspace number 11
 
 # Move container
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -195,16 +196,19 @@ seat seat0 xcursor_theme catppuccin-mocha-dark-cursors
 
 # Assingments
 assign [app_id="firefox"] workspace number 2
-assign [class="VSCodium"] workspace number 3
+assign [app_id="code"] workspace number 3
+assign [class="jetbrains-studio"] workspace number 3
+assign [class="Arduino IDE"] workspace number 3
 assign [app_id="mpv"] workspace number 4
-assign [class="KeePassXC"] workspace number 7
+assign [app_id="org.keepassxc.KeePassXC"] workspace number 7
 assign [app_id="thunar"] workspace number 8
-assign [class="Spotify"] workspace number 9
+assign [app_id="spotify"] workspace number 9
 assign [class="discord"] workspace number 10
 
 # Hotkeys
 bindsym XF86MonBrightnessUp exec brightnessctl set +1%
 bindsym XF86MonBrightnessDown exec brightnessctl set 1-%
+bindsym XF86TouchpadToggle exec swaymsg input 1267:12729:ASUE140D:00_04F3:31B9_Touchpad events toggle
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
