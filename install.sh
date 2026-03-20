@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S os-prober fish xorg xorg-xinit i3-wm xdg-user-dirs kitty polkit polkit-gnome gnome-keyring iptables-nft nftables imv feh rofi polybar zip unzip unrar intel-ucode pipewire-pulse pamixer wiremix oxygen-sounds nvidia-open nvidia-utils fastfetch thunar tumbler ffmpegthumbnailer ntfs-3g vifm ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop discord mpv exfat-utils udiskie keepassxc imagemagick dunst xclip playerctl firefox spotify-launcher clipcat rofimoji xdotool xdo
+sudo pacman -S os-prober fish xorg xorg-xinit i3-wm xdg-user-dirs kitty polkit polkit-gnome gnome-keyring iptables-nft nftables bluez bluez-utils imv feh rofi polybar zip unzip unrar intel-ucode pipewire-pulse pamixer wiremix oxygen-sounds nvidia-open nvidia-utils fastfetch thunar tumbler ffmpegthumbnailer ntfs-3g vifm ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop discord mpv exfat-utils udiskie keepassxc imagemagick dunst xclip playerctl firefox spotify-launcher clipcat rofimoji xdotool xdo
 
 sudo cp desktopconf/X11/xorg.conf.i /etc/X11/
 sudo cp desktopconf/X11/xorg.conf.n /etc/X11/
@@ -27,6 +27,8 @@ cp -r files/wallpapers/ $HOME/.config
 sudo cp -R files/.vim/ /root/
 sudo cp files/.vimrc /root/
 
+sudo systemctl enable bluetooth.service
+sudo systemctl enable rtkot-daemon.service
 
 sudo cp files/99-noto-reject-nastaliq.conf /etc/fonts/conf.d/
 
@@ -38,7 +40,6 @@ git clone https://aur.archlinux.org/yay-bin.git
 
 cd yay-bin
 makepkg -si
-#yay -S feishin-bin #mpd-mpris-bin betterlockscreen ani-cli vscodium-bin python-yams yt-dlp
 
 printf "GRUB_GFXMODE=1360x768\nGRUB_DISABLE_OS_PROBER=false\nGRUB_THEME="/boot/grub/themes/catppuccin/theme.txt""|sudo tee -a /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
