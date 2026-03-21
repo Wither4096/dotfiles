@@ -14,7 +14,8 @@ printf "\n# zram\n/dev/zram0 none swap defaults,discard,pri=100,x-systemd.makefs
 cp -r desktopconf/.config $HOME
 cp -r files/scripts/ $HOME/.local/
 mkdir -p $HOME/Pictures/Screenshots/
-sudo cp -r files/themes/ /usr/share/
+mkdir -p ~/.local/share/icons
+cp -r files/themes/ ~/.local/share/
 cp files/.gtkrc-2.0 $HOME
 cp desktopconf/.xinitrc $HOME
 cp desktopconf/.bashrc $HOME
@@ -27,7 +28,7 @@ sudo cp -R files/.vim/ /root/
 sudo cp files/.vimrc /root/
 
 sudo systemctl enable bluetooth.service
-sudo systemctl enable rtkot-daemon.service
+sudo systemctl enable rtkit-daemon.service
 
 sudo cp files/99-noto-reject-nastaliq.conf /etc/fonts/conf.d/
 
@@ -42,7 +43,7 @@ makepkg -si
 
 git clone https://github.com/tsora1603/pixora-icons.git
 cd pixora-icons
-mkdir ~/.local/share/icons
+mkdir -p ~/.local/share/icons
 cp -r pixelitos-dark/ ~/.local/share/icons
 cp -r pixelitos-light/ ~/.local/share/icons
 cp -r pixora/ ~/.local/share/icons

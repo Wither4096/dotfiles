@@ -1,13 +1,14 @@
 #!/bin/bash
 
-sudo pacman -S os-prober fish sway swaybg swayidle swaylock grim slurp rofi-wayland waybar kitty polkit polkit-gnome gnome-keyring iptables-nft nftables imv zip unzip amd-ucode pipewire-pulse pamixer wiremix mesa fastfetch thunar tumbler ffmpegthumbnailer xdg-user-dirs ntfs-3g vifm ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop mpv exfat-utils udiskie keepassxc imagemagick dunst playerctl libreoffice-still qt5-wayland xwayland brightnessctl plymouth sddm fprint qt6-svg qt6-declarative qt5-quickcontrols2 firefox spotify-launcher bluez bluez-utils blueman rofimoji wtype wl-clipboard tlp openssh kanshi #discord greetd greetd-tuigreet
+sudo pacman -S os-prober fish sway swaybg swayidle swaylock grim slurp rofi-wayland waybar kitty polkit polkit-gnome gnome-keyring iptables-nft nftables imv zip unzip amd-ucode pipewire-pulse pamixer wiremix mesa fastfetch thunar tumbler ffmpegthumbnailer xdg-user-dirs ntfs-3g vifm ttf-nerd-fonts-symbols ttf-jetbrains-mono noto-fonts-cjk noto-fonts-emoji noto-fonts btop mpv exfat-utils udiskie keepassxc imagemagick dunst playerctl libreoffice-still qt5-wayland xorg-xwayland brightnessctl plymouth sddm qt6-svg qt6-declarative qt5-quickcontrols2 firefox spotify-launcher bluez bluez-utils blueman rofimoji wtype wl-clipboard tlp openssh kanshi #discord greetd greetd-tuigreet
 
 sudo cp /etc/default/grub /etc/default/grub.old
 sudo cp -r files/grubthemes/catppuccin /boot/grub/themes
 
 cp -r laptopconf/.config $HOME
 cp -r files/scripts $HOME/.local/
-sudo cp -r files/themes/ /usr/share/
+mkdir -p ~/.local/share/icons
+cp -r files/themes/ ~/.local/share/
 cp files/.gtkrc-2.0 $HOME
 cp laptopconf/.bashrc $HOME
 cp files/.Xresources $HOME
@@ -21,9 +22,9 @@ sudo cp files/20-limits.conf /etc/tlp.d/
 
 sudo cp files/99-noto-reject-nastaliq.conf /etc/fonts/conf.d/
 
-# curl -LO https://github.com/werman/noise-suppression-for-voice/releases/latest/download/linux-rnnoise.zip
-# mkdir -p ~/.local/share/noise-suppression
-# unzip linux-rnnoise.zip -d ~/.local/share/noise-suppression
+curl -LO https://github.com/werman/noise-suppression-for-voice/releases/latest/download/linux-rnnoise.zip
+mkdir -p ~/.local/share/noise-suppression
+unzip linux-rnnoise.zip -d ~/.local/share/noise-suppression
 
 sudo systemctl enable sddm.service
 sudo systemctl enable tlp.service
@@ -35,7 +36,6 @@ makepkg -si
 
 git clone https://github.com/tsora1603/pixora-icons.git
 cd pixora-icons
-mkdir ~/.local/share/icons
 cp -r pixelitos-dark/ ~/.local/share/icons
 cp -r pixelitos-light/ ~/.local/share/icons
 cp -r pixora/ ~/.local/share/icons
