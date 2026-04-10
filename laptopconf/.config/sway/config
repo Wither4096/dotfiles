@@ -20,7 +20,7 @@ set $menu rofi -show drun
 bindsym $mod+Return exec $term
 
 # Kill window
-bindsym $mod+Shift+q kill
+bindsym $mod+Alt+q kill
 
 # Run rofi
 bindsym $mod+d exec $menu
@@ -29,10 +29,10 @@ bindsym $mod+d exec $menu
 floating_modifier $mod normal
 
 # Reload config file
-bindsym $mod+Shift+c reload
+bindsym $mod+Alt+c reload
 
 # Exit
-# bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+# bindsym $mod+Alt+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 # Change focus
 bindsym $mod+$left focus left
@@ -45,14 +45,14 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # Move focused windows
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Alt+$left move left
+bindsym $mod+Alt+$down move down
+bindsym $mod+Alt+$up move up
+bindsym $mod+Alt+$right move right
+bindsym $mod+Alt+Left move left
+bindsym $mod+Alt+Down move down
+bindsym $mod+Alt+Up move up
+bindsym $mod+Alt+Right move right
 
 # Switch workspaces
 bindsym $mod+1 workspace number 1
@@ -68,16 +68,16 @@ bindsym $mod+0 workspace number 10
 bindsym $mod+equal workspace number 11
 
 # Move container
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Alt+1 move container to workspace number 1
+bindsym $mod+Alt+2 move container to workspace number 2
+bindsym $mod+Alt+3 move container to workspace number 3
+bindsym $mod+Alt+4 move container to workspace number 4
+bindsym $mod+Alt+5 move container to workspace number 5
+bindsym $mod+Alt+6 move container to workspace number 6
+bindsym $mod+Alt+7 move container to workspace number 7
+bindsym $mod+Alt+8 move container to workspace number 8
+bindsym $mod+Alt+9 move container to workspace number 9
+bindsym $mod+Alt+0 move container to workspace number 10
 
 # Split mode
 bindsym $mod+z splith
@@ -87,7 +87,7 @@ bindsym $mod+v splitv
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Alt+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # Fullscreen mode
@@ -98,7 +98,7 @@ bindsym $mod+i focus parent
 bindsym $mod+o focus child
 
 # Scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Alt+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Resize windows
@@ -214,7 +214,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym Print exec grim -|tee -a "$HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S - Full").png"|wl-copy
-bindsym $mod+Shift+s exec grim -g "$(slurp)" -|tee -a "$HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S").png"|wl-copy
+bindsym $mod+Alt+s exec grim -g "$(slurp)" -|tee -a "$HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S").png"|wl-copy
 bindsym $mod+semicolon exec "rofimoji -a type copy"
 
 # Docked 
@@ -250,8 +250,8 @@ exec_always kanshi -c kanshi -c ~/.config/kanshi/config
 
 # Clipcat
 exec clipcatd
-bindsym $mod+Shift+v exec clipcat-menu
-bindsym $mod+Shift+n exec clipcatctl clear
+bindsym $mod+Alt+v exec clipcat-menu
+bindsym $mod+Alt+n exec clipcatctl clear
 
 # Use laptop microphone if nothing else is connected
 exec "pactl set-default-source alsa_input.pci-0000_04_00.6.HiFi__Mic1__source"

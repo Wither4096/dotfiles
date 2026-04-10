@@ -41,7 +41,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec kitty
 
 # Kill window
-bindsym $mod+Shift+q kill
+bindsym $mod+mod1+q kill
 
 # Rofi
 bindsym $mod+d exec rofi -show drun
@@ -57,16 +57,16 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+mod1+h move left
+bindsym $mod+mod1+j move down
+bindsym $mod+mod1+k move up
+bindsym $mod+mod1+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+mod1+Left move left
+bindsym $mod+mod1+Down move down
+bindsym $mod+mod1+Up move up
+bindsym $mod+mod1+Right move right
 
 # Split window horizontal
 bindsym $mod+z split h
@@ -81,7 +81,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+mod1+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -116,21 +116,21 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # Move Containers
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+mod1+1 move container to workspace number $ws1
+bindsym $mod+mod1+2 move container to workspace number $ws2
+bindsym $mod+mod1+3 move container to workspace number $ws3
+bindsym $mod+mod1+4 move container to workspace number $ws4
+bindsym $mod+mod1+5 move container to workspace number $ws5
+bindsym $mod+mod1+6 move container to workspace number $ws6
+bindsym $mod+mod1+7 move container to workspace number $ws7
+bindsym $mod+mod1+8 move container to workspace number $ws8
+bindsym $mod+mod1+9 move container to workspace number $ws9
+bindsym $mod+mod1+0 move container to workspace number $ws10
 
 # Reload configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+mod1+c reload
 # Restart i3
-bindsym $mod+Shift+r restart
+bindsym $mod+mod1+r restart
 
 # Resize Windows
 mode "Resize" {
@@ -192,8 +192,8 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Clipboard
 exec --no-startup-id clipcatd
-bindsym $mod+Shift+v exec --no-startup-id clipcat-menu
-bindsym $mod+Shift+n exec --no-startup-id clipcatctl clear
+bindsym $mod+mod1+v exec --no-startup-id clipcat-menu
+bindsym $mod+mod1+n exec --no-startup-id clipcatctl clear
 
 # polkit
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -234,6 +234,6 @@ bindcode 171 exec --no-startup-id "playerctl next --player=$(cat ~/.cache/player
 bindcode 172 exec --no-startup-id "playerctl play-pause --player=$(cat ~/.cache/player)"
 bindcode 173 exec --no-startup-id "playerctl previous --player=$(cat ~/.cache/player)"
 bindcode 174 exec --no-startup-id "playerctl stop --player=$(cat ~/.cache/player)"
-bindsym --release $mod+Shift+s exec --no-startup-id import png:-|tee $HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S").png|xclip -selection clipboard -t image/png&paplay /usr/share/sounds/oxygen/stereo/camera-shutter.wav
+bindsym --release $mod+mod1+s exec --no-startup-id import png:-|tee $HOME/Pictures/Screenshots/$(date +"%d-%b-%H-%M-%S").png|xclip -selection clipboard -t image/png&paplay /usr/share/sounds/oxygen/stereo/camera-shutter.wav
 bindsym $mod+P exec ~/.config/rofi/powermenu/powermenu.sh
 bindsym $mod+semicolon exec "rofimoji -a type copy"
